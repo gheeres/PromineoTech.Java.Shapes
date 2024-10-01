@@ -1,6 +1,8 @@
 package com.promineotech;
 
 import java.awt.BorderLayout;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -16,7 +18,6 @@ public class Application extends JPanel {
    * The application code.
    */
   void start() {
-    
   }
 
   /**
@@ -52,4 +53,29 @@ public class Application extends JPanel {
   public static int getDefaultCanvasHeight() {
     return defaultCanvasHeight;
   }  
+  
+  /**
+   * Returns the next pseudorandom, uniformly distributed int value from this random number generator's sequence. 
+   * The general contract of nextInt is that one int value is pseudorandomly generated and returned. 
+   * All 232 possible int values are produced with (approximately) equal probability.
+   * @return the next pseudorandom, uniformly distributed int value from this random number generator's sequence
+   */
+  public static int getRandomInt() {
+    return random.nextInt();
+  }  
+
+  /**
+   * Returns a pseudorandom, uniformly distributed int value between 0 (inclusive) and the specified value (exclusive), 
+   * drawn from this random number generator's sequence. The general contract of nextInt is that one int 
+   * value in the specified range is pseudorandomly generated and returned. All bound possible int values are 
+   * produced with (approximately) equal probability.
+   * @param range The upper bound (exclusive). Must be positive.
+   * @return the next pseudorandom, uniformly distributed int value between zero (inclusive) and bound (exclusive) from this random number generator's sequence
+   */
+  public static int getRandomInt(int bound) {
+    if (bound > 0) {
+      return random.nextInt(bound);
+    }
+    return 0;
+  }   
 }
