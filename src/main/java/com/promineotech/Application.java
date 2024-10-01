@@ -25,7 +25,7 @@ public class Application extends JPanel {
    * @throws InterruptedException
    */
   public static void main(String[] args) throws InterruptedException {
-    JFrame frame = new JFrame("Objects");
+    JFrame frame = new JFrame("Object Oriented Programming Demo");
     frame.setLayout(new BorderLayout());
     frame.setSize(getDefaultCanvasWidth(), getDefaultCanvasHeight());
     frame.setResizable(true);
