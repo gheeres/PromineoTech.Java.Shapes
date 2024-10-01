@@ -1,4 +1,4 @@
-package _PromineoTech.Java.Shapes;
+package com.promineotech;
 
 import java.awt.BorderLayout;
 import java.util.Random;
