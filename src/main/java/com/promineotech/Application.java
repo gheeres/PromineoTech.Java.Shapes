@@ -1,6 +1,7 @@
 package com.promineotech;
 
 import java.awt.BorderLayout;
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -12,12 +13,65 @@ public class Application extends JPanel {
   private static Random random = new Random();
   private static final int defaultCanvasWidth = 800;
   private static final int defaultCanvasHeight = 600;
-  //private static List<Shape> shapes = new ArrayList<>();
+  private static List<Shape> shapes = new ArrayList<>();
 
   /**
    * The application code.
    */
   void start() {
+    //Circle circle = new Circle(getRandomInt(getWidth()), getRandomInt(getHeight()), 100);
+    //circle.setX(getRandomInt(getWidth()));
+    //circle.setY(getRandomInt(getHeight()));
+    //circle.setRadius(50);
+    //System.out.println(circle.toString());
+
+    //List<Circle> circles = new ArrayList<>();
+    //circles.add(new Circle(getRandomInt(getWidth()), getRandomInt(getHeight()), 100));
+    //circles.add(new Circle(getRandomInt(getWidth()), getRandomInt(getHeight()), 200));
+    //circles.add(new Circle(getRandomInt(getWidth()), getRandomInt(getHeight()), 300));
+    //circles.add(new Circle(getRandomInt(getWidth()), getRandomInt(getHeight()), 50));
+    //circles.add(new Rectangle(getRandomInt(getWidth()), getRandomInt(getHeight()), 50, 100));
+    //Rectangle rectangle = new Rectangle(getRandomInt(getWidth()), getRandomInt(getHeight()), 50, 100);
+    
+    //Shape shape = new Shape(10, 10);
+    shapes.add(new Circle(getRandomInt(getWidth()), getRandomInt(getHeight()), 100));
+    shapes.add(new Circle(getRandomInt(getWidth()), getRandomInt(getHeight()), 200));
+    shapes.add(new Circle(getRandomInt(getWidth()), getRandomInt(getHeight()), 300));
+    shapes.add(new Circle(getRandomInt(getWidth()), getRandomInt(getHeight()), 400));
+    shapes.add(new Circle(getRandomInt(getWidth()), getRandomInt(getHeight()), 60));
+    shapes.add(new Circle(getRandomInt(getWidth()), getRandomInt(getHeight()), 75));
+    shapes.add(new Circle(getRandomInt(getWidth()), getRandomInt(getHeight()), 20));
+    shapes.add(new Rectangle(getRandomInt(getWidth()), getRandomInt(getHeight()), 50, 75));
+    shapes.add(new Rectangle(getRandomInt(getWidth()), getRandomInt(getHeight()), 60, 10));
+    shapes.add(new Rectangle(getRandomInt(getWidth()), getRandomInt(getHeight()), 230, 50));
+    shapes.add(new Rectangle(getRandomInt(getWidth()), getRandomInt(getHeight()), 60, 300));
+    shapes.add(new Rectangle(getRandomInt(getWidth()), getRandomInt(getHeight()), 100, 10));
+    shapes.add(new Rectangle(getRandomInt(getWidth()), getRandomInt(getHeight()), 300, 200));
+    shapes.add(new Square(getRandomInt(getWidth()), getRandomInt(getHeight()), 400));
+    shapes.add(new Square(getRandomInt(getWidth()), getRandomInt(getHeight()), 200));
+    shapes.add(new Square(getRandomInt(getWidth()), getRandomInt(getHeight()), 10));
+    
+    Graphics g = getGraphics();
+    while (true) {
+      try {
+        // get input
+        
+        // move / update
+        
+        // render
+        //for(Circle circle: circles) {
+        //  circle.render(g);
+        //}
+        //rectangle.render(g);
+        for(Shape shape : shapes) {
+          shape.render(g);
+        }
+        
+        Thread.sleep(10);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
   }
 
   /**
